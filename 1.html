@@ -152,14 +152,27 @@
         background-color: #eee!important;
     }
 </style>
-<div id="app">
+<style>
+    [v-cloak] {
+        display: none;
+    }
+</style>
+<link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+<div id="app" v-cloak>
     <my-select
      :items="items"
      :width="400"
      pretext="hello world"
     ></my-select>
+
+
+    <el-button @click="visible = true">按钮</el-button>
+    <el-dialog :visible.sync="visible" title="Hello world">
+        <p>欢迎使用 Element</p>
+    </el-dialog>
 </div>
 <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+<script src="https://unpkg.com/element-ui/lib/index.js"></script>
 <script src="Select.js"></script>
 <script>
     var Main = {
